@@ -1,0 +1,30 @@
+= The Plan for YAML and Perl in 2014
+
+Ingy döt Net and David Golden met up in NYC on May 29, 2014 to discuss the way
+forward to a better YAML experience in Perl. This document is an overview of
+that and this repository is a place to collect all the ideas. The vision
+extends beyond YAML (ie serialization via JSON, BSON, ProtoBuf, JSYNC, etc) and
+beyond Perl (Ruby, Python, JavaScript, PHP, etc), but YAML+Perl is the
+crossroads that we have the most weight in, so we start there (with an eye
+towards the bigger picture).
+
+Plans and Topics Include:
+
+* A modern API
+  * Solid/consistent OO API
+  * (plus a) Sexy DWIM API
+* /::Any/ style architecture
+  * YAML::Any is removed
+  * YAML.pm is the frontend *Any*
+* YAML.pm is a proxy to backend workers:
+  * YAML::Old default under /old usage/
+  * Perl, Old, XS, Syck, Tiny backends
+* Use Alt-YAML-NYC to roll out new YAML
+* Support full stack when possible:
+  * Load == Read, Parse, Compose, Construct
+  * Dump == Represent, Serialize, Emit, Write
+* Spec out type resolution and coercion phases
+  * Both directions
+  * Schema objects config/control
+* Simple Pegex grammar fully defines the parser
+
